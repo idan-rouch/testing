@@ -30,9 +30,9 @@ spec:
           volumeMounts:
             - name: credentials
               mountPath: /home/opuser/.op
-            - name: workspace-credentials-idan2
+            - name: workspace-credentials
               mountPath: /home/opuser/.op/workspace-credentials
-            - name: workspace-settings-idan
+            - name: workspace-settings
               mountPath: /home/opuser/.op/workspace-settings
         - name: redis
           image: redis
@@ -54,19 +54,19 @@ spec:
       volumes:
         - name: credentials
           secret:
-            secretName: scimsession-idan
+            secretName: scimsession
             items:
               - key: latest
                 path: scimsession
-        - name: workspace-credentials-idan2 # CORRECTED NAME TO MATCH volumeMounts
+        - name: workspace-credentials
           secret:
-            secretName: workspace-credentials-idan2
+            secretName: workspace-credentials
             items:
               - key: latest
                 path: .json
-        - name: workspace-settings-idan # CORRECTED NAME TO MATCH volumeMounts
+        - name: workspace-settings
           secret:
-            secretName: workspace-settings-idan
+            secretName: workspace-settings
             items:
               - key: latest
                 path: .json

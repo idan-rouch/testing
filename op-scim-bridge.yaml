@@ -58,13 +58,13 @@ spec:
             items:
               - key: latest
                 path: scimsession
-        - name: workspace-credentials
+        - name: workspace-credentials-idan2 # CORRECTED NAME TO MATCH volumeMounts
           secret:
             secretName: workspace-credentials-idan2
             items:
               - key: latest
                 path: .json
-        - name: workspace-settings
+        - name: workspace-settings-idan # CORRECTED NAME TO MATCH volumeMounts
           secret:
             secretName: workspace-settings-idan
             items:

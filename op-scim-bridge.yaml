@@ -30,7 +30,7 @@ spec:
           volumeMounts:
             - name: credentials
               mountPath: /home/opuser/.op
-            - name: workspace-credentials-idan
+            - name: workspace-credentials-idan2
               mountPath: /home/opuser/.op/workspace-credentials
             - name: workspace-settings
               mountPath: /home/opuser/.op/workspace-settings

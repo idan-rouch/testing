@@ -18,6 +18,11 @@ spec:
           ports:
             - name: http1
               containerPort: 3002
+          env:
+            - name: OP_WORKSPACE_CREDENTIALS
+              value: /home/opuser/.op/workspace-credentials/.json
+            - name: OP_WORKSPACE_SETTINGS
+              value: /home/opuser/.op/workspace-settings/.json
           resources:
             limits:
               cpu: 500m
@@ -25,6 +30,10 @@ spec:
           volumeMounts:
             - name: credentials
               mountPath: /home/opuser/.op
+            - name: workspace-credentials-idan
+              mountPath: /home/opuser/.op/workspace-credentials
+            - name: workspace-settings
+              mountPath: /home/opuser/.op/workspace-settings
         - name: redis
           image: redis
           args:
@@ -49,3 +58,15 @@ spec:
             items:
               - key: latest
                 path: scimsession
+        - name: workspace-credentials-idan2
+          secret:
+            secretName: workspace-credentials-idan2
+            items:
+              - key: latest
+                path: .json
+        - name: workspace-settings
+          secret:
+            secretName: workspace-settings-idan
+            items:
+              - key: latest
+                path: .json

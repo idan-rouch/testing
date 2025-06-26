@@ -30,7 +30,7 @@ spec:
           volumeMounts:
             - name: credentials
               mountPath: /home/opuser/.op
-            - name: workspace-credentials-idan2
+            - name: workspace-credentials-idan
               mountPath: /home/opuser/.op/workspace-credentials
             - name: workspace-settings
               mountPath: /home/opuser/.op/workspace-settings
@@ -58,9 +58,9 @@ spec:
             items:
               - key: latest
                 path: scimsession
-        - name: workspace-credentials-idan2
+        - name: workspace-credentials-idan
           secret:
-            secretName: workspace-credentials-idan2
+            secretName: workspace-credentials-idan
             items:
               - key: latest
                 path: .json

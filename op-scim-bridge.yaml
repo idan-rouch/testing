@@ -48,4 +48,4 @@ spec:
             secretName: scimsession-idan2
             items:
               - key: latest
-                path: scimsession-idan2
+                path: scimsession

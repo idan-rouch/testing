@@ -45,7 +45,7 @@ spec:
       volumes:
         - name: credentials
           secret:
-            secretName: scimsession-idan2
+            secretName: scimsession-idan
             items:
               - key: latest
                 path: scimsession
